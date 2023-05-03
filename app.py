@@ -1,13 +1,22 @@
 from flask import Flask, render_template, request
 import mysql.connector
+import mariadb
 
 app = Flask(__name__)
 
 # Set up the database connection
-mydb = mysql.connector.connect(
-    host="localhost",
+# mydb = mysql.connector.connect(
+#     host="192.168.56.15",
+#     user="root",
+#     password="admin123",
+#     database="mylibrary"
+# )
+
+mydb = mariadb.connect(
     user="root",
     password="admin123",
+    host="192.168.56.15",
+    port=3306,
     database="mylibrary"
 )
 
