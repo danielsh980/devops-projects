@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Daniel's Library</title>
+    </head>
+    <body>
+        <h1>Daniel's Library</h1>
+        <ul>
+            {% for book in books %}
+                <li>{{ book[1] }} by {{ book[2] }}</li>
+            {$ endfor %}
+        </ul>
+        <a herf="/add">Add a book</a>
+    </body>
+</html>
