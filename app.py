@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 # Set up the database connection
 mydb = mysql.connector.connect(
-    host="192.168.56.15",
+    host="webapp-db01.daniprojects.net",
     user="admin",
     password="admin123",
     port=3306,
