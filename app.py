@@ -1,21 +1,13 @@
 from flask import Flask, render_template, request
 import mysql.connector
-import mariadb
 
 app = Flask(__name__)
 
 # Set up the database connection
-# mydb = mysql.connector.connect(
-#     host="192.168.56.15",
-#     user="root",
-#     password="admin123",
-#     database="mylibrary"
-# )
-
-mydb = mariadb.connect(
-    user="root",
-    password="admin123",
+mydb = mysql.connector.connect(
     host="192.168.56.15",
+    user="admin",
+    password="admin123",
     port=3306,
     database="mylibrary"
 )
@@ -34,6 +26,7 @@ def home():
     return render_template('home.html', books=books)
 
 # Define a route to add a new book
+@app.route('/add', methods=['GET', 'POST'])
 def add():
     if request.method == 'POST':
         title = request.form['title']
